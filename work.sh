@@ -55,9 +55,9 @@ _work_make_script() {
 _work_open_tabs() {
     local path="$1"
     local n_claude n_gemini n_codex
-    n_claude=$(_work_config_get "CLAUDE" "5")
+    n_claude=$(_work_config_get "CLAUDE" "4")
     n_gemini=$(_work_config_get "GEMINI" "1")
-    n_codex=$(_work_config_get  "CODEX"  "0")
+    n_codex=$(_work_config_get  "CODEX"  "1")
 
     local distro="${WSL_DISTRO_NAME:-Ubuntu}"
     local total=$(( n_claude + n_gemini + n_codex ))
@@ -209,7 +209,7 @@ work() {
             echo "  work set-config c=N g=N x=N"
             echo "                          Set tabs: c=claude g=gemini x=codex"
             echo ""
-            echo "  Defaults: claude=5, gemini=1, codex=0"
+            echo "  Defaults: claude=4, gemini=1, codex=1"
             ;;
 
         *)
