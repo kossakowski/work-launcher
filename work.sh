@@ -83,10 +83,10 @@ _work_open_tabs() {
         local label="$3"
         for (( i=0; i<count; i++ )); do
             if (( first )); then
-                wt_args+=("new-tab" "--title" "$label" "wsl.exe" "-d" "$distro" "--" "bash" "--login" "$script")
+                wt_args+=("new-tab" "--title" "$label" "wsl.exe" "-d" "$distro" "--" "bash" "-li" "$script")
                 first=0
             else
-                wt_args+=(";" "new-tab" "--title" "$label" "wsl.exe" "-d" "$distro" "--" "bash" "--login" "$script")
+                wt_args+=(";" "new-tab" "--title" "$label" "wsl.exe" "-d" "$distro" "--" "bash" "-li" "$script")
             fi
         done
     }
